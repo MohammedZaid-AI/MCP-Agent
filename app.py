@@ -11,10 +11,8 @@ load_dotenv()
 
 async def main():
     """Main function to run the MCP agent with Google Generative AI."""
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise ValueError("GOOGLE_API_KEY is missing. Please set it in your .env file.")
-    os.environ["GOOGLE_API_KEY"] = api_key
+    os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+    
 
     config_file = "browser_mcp.json"
 
